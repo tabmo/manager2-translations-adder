@@ -39,7 +39,7 @@ const askTranslation = () => {
       inquirer.prompt([{
         type: 'confirm',
         name: 'confirmReplace',
-        message: 'Key already exists in files. Replace?'
+        message: `Key already exists in files.\n  English: ${dataEn[key]}\n  French: ${dataFr[key]}\n  Replace?`
       }]).then(confirmRes => {
         if (confirmRes.confirmReplace) {
           addTranslationInFiles(key, res['en'], res['fr'])
